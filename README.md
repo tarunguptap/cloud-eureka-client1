@@ -35,11 +35,12 @@ This is Eureka client and rest api will return the work "Welcome"
       return "Welcome";
     }
   ```
-
+------------------------------------------------------------------
 6. Repeat steps 1 thru 5 (copy the entire project if it is easier), except use the following values:
   - Name of application: “cloud-eureka-client2”
   - spring.application.name: “cloud-eureka-client2”
-  - words: “Tarun”
+  - Add a String member variable named “words” in controller. Annotate it with @Value("${words}”).
+  - Keep words: “Tarun” in cloud config **(We will see the change in the value in cloud config will result into client3 output  )**
 
 7. Create a new Spring Boot web application.  
   - Name the application “cloud-eureka-client3”, and use this value for the Artifact.  
@@ -53,7 +54,7 @@ This is Eureka client and rest api will return the work "Welcome"
   - eureka.client.serviceUrl.defaultZone=http://localhost:8011/eureka/
   - server.port: 8020
 
-20. Add a Controller class to assemble and return the sentence:
+10. Add a Controller class to assemble and return the sentence:
   - Name the class anything you like.  Annotate it with @RestController.
   - Use @Autowired to obtain a DiscoveryClient (import from Spring Cloud).
   - Add the following methods to serve the sentence based on the words obtained from the client services. (feel free to optimize / refactor this code as you like:
@@ -81,4 +82,4 @@ This is Eureka client and rest api will return the work "Welcome"
     }
   ```
 
-21. Run all of the word services and sentence service.  (Run within your IDE, or build JARs for each one (mvn clean package) and run from the command line (java -jar name-of-jar.jar), whichever you find easiest).  (If running from STS, uncheck “Enable Live Bean support” in the run configurations).  Since each service uses a separate, random port, they should be able to run side-by-side on the same computer.  Open [http://localhost:8020/sentence](http://localhost:8020/sentence) to see the completed sentence.  
+11. Run all of the word services and sentence service.  (Run within your IDE, or build JARs for each one (mvn clean package) and run from the command line (java -jar name-of-jar.jar), whichever you find easiest).  (If running from STS, uncheck “Enable Live Bean support” in the run configurations).  Since each service uses a separate, random port, they should be able to run side-by-side on the same computer.  Open [http://localhost:8020/sentence](http://localhost:8020/sentence) to see the completed sentence.  
