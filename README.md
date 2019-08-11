@@ -1,11 +1,13 @@
 # cloud-eureka-client1
-This is Eureka client and rest api will return the work "Welcome"
+This is Eureka client and rest api will return the word "Welcome Tarun"
 
 
-    **Part 2, create clients**  
+    **Part 2, create clients** 
+    
  '''   
-    In this next section we will create several client applications that will work together to compose a sentence.  The sentence will be "Welcome Tarun".  2 services will get the one word each, and a 6th service will assemble them into a sentence.
+    In this next section we will create several client applications that will work together to compose a sentence.  The sentence will be "Welcome Tarun".  2 services will get the one word each, and a 3rd service will assemble them into a sentence.
 '''
+
 1. Create a new Spring Boot web application.  
   - Name the project "cloud-eureka-client1”, and use this value for the Artifact.  
   - Use JAR packaging and the latest versions of Java.  
@@ -62,11 +64,8 @@ This is Eureka client and rest api will return the work "Welcome"
     @GetMapping("/sentence")
     public @ResponseBody String getSentence() {
       return 
-        getWord("LAB-4-SUBJECT") + " "
-        + getWord("LAB-4-VERB") + " "
-        + getWord("LAB-4-ARTICLE") + " "
-        + getWord("LAB-4-ADJECTIVE") + " "
-        + getWord("LAB-4-NOUN") + "."
+        getWord("CLOUD-EUREKA-CLIENT1") + " "
+        + getWord("CLOUD-EUREKA-CLIENT2") + "."
         ;
     }
     
